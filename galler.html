@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All work</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e67e22;
+            --light: #f6efe6;
+            --dark: #2c3e50;
+            --accent: #3498db;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f6efe6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h1 {
+            font-size: 2.8rem;
+            color: var(--primary);
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .section-title h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--secondary);
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #000000;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            background: none;
+            border: 2px solid var(--primary);
+            padding: 0.7rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            color: var(--dark);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+           color:  #f6efe6;
+           background-color: #507d73;
+            transform: translateY(-3px);
+            border: 0px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            height: 300px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: #f6efe6;
+            padding: 2rem 1.5rem 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-overlay .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background-color: var(--secondary);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+        .filter-buttons a{
+              color:  #f6efe6;
+           background-color: #507d73;
+           text-decoration: none;
+           margin-top: 2vh;
+
+        }
+
+        
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="section-title">
+        <h1></h1>
+        <p>Explore our collection of beautifully designed spaces that transform houses into homes</p>
+    </div>
+
+    <div class="filter-buttons">
+        <a href="index.html" class="filter-btn active">back to main</a>
+    </div>
+
+    <div class="gallery">
+
+        <!-- Updated 1–24 -->
+
+        <div class="gallery-item visible"><img src="assests/main0.jpeg"><div class="gallery-overlay"><h3>Modern Living Room Rendering</h3><div class="tags"><span class="tag">Modern</span><span class="tag">Bright</span><span class="tag">Comfortable</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/main1.jpeg"><div class="gallery-overlay"><h3>Contemporary Media Wall Detail</h3><div class="tags"><span class="tag">Elegant</span><span class="tag">Minimalist</span><span class="tag">Neutral</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/main2.jpeg"><div class="gallery-overlay"><h3>Minimalist Bedroom Rendering</h3><div class="tags"><span class="tag">Peaceful</span><span class="tag">Calm</span><span class="tag">Serene</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/main3.jpeg"><div class="gallery-overlay"><h3>Sleek Entertainment Center</h3><div class="tags"><span class="tag">Clean</span><span class="tag">Balanced</span><span class="tag">Functional</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/main4.jpeg"><div class="gallery-overlay"><h3>Master Bedroom Interior View</h3><div class="tags"><span class="tag">Soft</span><span class="tag">Relaxing</span><span class="tag">Neutral</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/main5.jpeg"><div class="gallery-overlay"><h3>Eclectic Library Nook</h3><div class="tags"><span class="tag">Organized</span><span class="tag">Stylish</span><span class="tag">Display</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/main6.jpeg"><div class="gallery-overlay"><h3>Lounge Seating Interior</h3><div class="tags"><span class="tag">Warm</span><span class="tag">Rich</span><span class="tag">Textured</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/main7.jpeg"><div class="gallery-overlay"><h3>Integrated Storage System</h3><div class="tags"><span class="tag">Airy</span><span class="tag">Organized</span><span class="tag">Accessible</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/main8.jpeg"><div class="gallery-overlay"><h3>Transitional Sectional Seating</h3><div class="tags"><span class="tag">Cozy</span><span class="tag">Earthy</span><span class="tag">Spacious</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/main9.jpeg"><div class="gallery-overlay"><h3>Compact Home Office Design</h3><div class="tags"><span class="tag">Bright</span><span class="tag">Functional</span><span class="tag">Tidy</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/main10.jpeg"><div class="gallery-overlay"><h3>Traditional Seating Arrangement</h3><div class="tags"><span class="tag">Classic</span><span class="tag">Inviting</span><span class="tag">Simple</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/main11.jpeg"><div class="gallery-overlay"><h3>Residential Exterior Perspective</h3><div class="tags"><span class="tag">Minimalist</span><span class="tag">Urban</span><span class="tag">Structured</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/photo1.jpeg"><div class="gallery-overlay"><h3>Neoclassical Finishing Detail</h3><div class="tags"><span class="tag">Classical</span><span class="tag">Detailed</span><span class="tag">Elegant</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/photo2 (2).jpeg"><div class="gallery-overlay"><h3>Reflected Ceiling Plan (RCP)</h3><div class="tags"><span class="tag">Technical</span><span class="tag">Space</span><span class="tag">Blueprint</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/photo3.jpeg"><div class="gallery-overlay"><h3>Architectural Perspective Sketch</h3><div class="tags"><span class="tag">Modern</span><span class="tag">Minimal</span><span class="tag">Rendered</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/photo4.jpeg"><div class="gallery-overlay"><h3>Exploded Axonometric View</h3><div class="tags"><span class="tag">Exploded</span><span class="tag">Assembly</span><span class="tag">Diagram</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/photo5.jpeg"><div class="gallery-overlay"><h3>Massing Diagram Elevation</h3><div class="tags"><span class="tag">Terraced</span><span class="tag">Contemporary</span><span class="tag">Form</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/photo6.jpeg"><div class="gallery-overlay"><h3>Ground Floor Plan</h3><div class="tags"><span class="tag">Simple</span><span class="tag">Layout</span><span class="tag">Plan</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/photo7.jpeg"><div class="gallery-overlay"><h3>Typical Floor Plan Set</h3><div class="tags"><span class="tag">Vertical</span><span class="tag">Stacked</span><span class="tag">Plans</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/photo8.jpeg"><div class="gallery-overlay"><h3>Residential Unit Layouts</h3><div class="tags"><span class="tag">Complex</span><span class="tag">Residential</span><span class="tag">Layout</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/photo9.jpeg"><div class="gallery-overlay"><h3>Front Elevation Drawing</h3><div class="tags"><span class="tag">Geometric</span><span class="tag">Modular</span><span class="tag">Elevation</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/photo10.jpeg"><div class="gallery-overlay"><h3>Exterior Massing Model</h3><div class="tags"><span class="tag">Sleek</span><span class="tag">Modern</span><span class="tag">Model</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/photo11.jpeg"><div class="gallery-overlay"><h3>Detailed Site Drawing</h3><div class="tags"><span class="tag">Technical</span><span class="tag">Complete</span><span class="tag">Drawing</span></div></div></div>
+
+        <div class="gallery-item visible"><img src="assests/photo12.jpeg"><div class="gallery-overlay"><h3>Building Elevation & Section</h3><div class="tags"><span class="tag">Blocky</span><span class="tag">Multi</span><span class="tag">Level</span></div></div></div>
+
+    </div>
+        <div class="filter-buttons">
+        <a href="index.html" class="filter-btn active">back to main</a>
+    </div>
+    
+</div>
+
+</body>
+</html>
